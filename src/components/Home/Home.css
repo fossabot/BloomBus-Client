@@ -29,6 +29,7 @@ header {
 
   background-color: white;
   border-bottom: 1px solid #ddd;
+  z-index: 2;
 }
 header > img {
   height: 1em;

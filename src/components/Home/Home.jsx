@@ -1,6 +1,8 @@
 /* global document, google, firebase, window */
 import React, { Component } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import LoopsCarousel from '../LoopsCarousel/LoopsCarousel';
+import Sidebar from '../Sidebar/Sidebar';
 import './Home.css';
 import { constructMarker, getBoundsFromLatLngs } from '../../utils/functions';
 import { campusBounds, campusCenter, mapStyles } from '../../utils/constants';
@@ -192,14 +194,26 @@ class Home extends Component {
           <img src="./bloombus-logo.svg" alt="Shuttle Icon" />
         </header>
         <div id="map" />
-        <LoopsCarousel
-          loops={this.state.loops || []}
-          stops={this.state.loops[0] && this.state.loopStops[this.state.loopKey] // Only pass stops for the selected loop
-            ? this.state.loopStops[this.state.loopKey].map(stopKey => this.state.stops[stopKey])
-            : []
-          }
-          onSelectedLoopChanged={this.onSelectedLoopChanged}
-        />
+        <BrowserView>
+          <Sidebar
+            loops={this.state.loops || []}
+            stops={this.state.loops[0] && this.state.loopStops[this.state.loopKey] // Only pass stops for the selected loop
+              ? this.state.loopStops[this.state.loopKey].map(stopKey => this.state.stops[stopKey])
+              : []
+            }
+            onSelectedLoopChanged={this.onSelectedLoopChanged}
+          />
+        </BrowserView>
+        <MobileView>
+          <LoopsCarousel
+            loops={this.state.loops || []}
+            stops={this.state.loops[0] && this.state.loopStops[this.state.loopKey] // Only pass stops for the selected loop
+              ? this.state.loopStops[this.state.loopKey].map(stopKey => this.state.stops[stopKey])
+              : []
+            }
+            onSelectedLoopChanged={this.onSelectedLoopChanged}
+          />
+        </MobileView>
       </React.Fragment>
     );
   }

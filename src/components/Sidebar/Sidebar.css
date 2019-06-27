@@ -1,0 +1,54 @@
+.loops-sidebar-wrapper {
+  box-sizing: border-box;
+  height: 100%; 
+  width: 15vw; 
+  position: fixed; 
+  z-index: 1;
+  top: 5%;
+  left: 0;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  overflow-y:auto
+}
+
+.sidebar__card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+  width: 15vw;
+  height: 20vw;
+  z-index: 100;
+  border-top-left-radius: 1.4rem;
+  border-top-right-radius: 1.4rem;
+}
+.sidebar__ card__head {
+  height: 110px;
+  box-sizing: border-box;
+  overflow: hidden;
+  filter: saturate(90%) brightness(100%);
+  cursor: pointer;
+  transition: color 0.5s;
+}
+.sidebar__ card__notch {
+  --notch-height: 0.3rem;
+  --notch-width: 1.7rem;
+  width: var(--notch-width);
+  height: var(--notch-height);
+  background-color: #fff;
+  border-radius: calc(var(--notch-height) / 2);
+  position: relative;
+  left: calc(50vw - calc(var(--notch-width) / 2));
+  top: 0.55rem;
+  z-index: 900;
+}
+.sidebar__card__name {
+  display: inline-block;
+  margin-left: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1em;
+}

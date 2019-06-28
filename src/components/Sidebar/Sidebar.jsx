@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import StopsList from '../StopsList/StopsList';
 import List, {
   ListItem,
   ListHeader,
   ListItemTitle,
-  ListItemSubtitle
+  ListItemSubtitle,
 } from 'calcite-react/List';
+import StopsList from '../StopsList/StopsList';
 import './Sidebar.css';
 
 class Sidebar extends Component {
@@ -36,6 +36,7 @@ class Sidebar extends Component {
                   {/* List Header */}
                   <span className="sidebar__card__name">{loop.properties.name}</span>
                 </div>
+                {/* List Item of Stops */}
                 <StopsList stops={this.props.stops} />
               </div>
             ))

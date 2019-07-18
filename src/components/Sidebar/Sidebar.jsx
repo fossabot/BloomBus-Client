@@ -1,17 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import List, {
-  ListItem,
-  ListHeader,
-  ListItemTitle,
-  ListItemSubtitle,
-} from 'calcite-react/List';
 import StopsList from '../StopsList/StopsList';
 import './Sidebar.css';
 
 class Sidebar extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   // need to change this to use the calcite-react
